@@ -1,2 +1,11 @@
-<h3>{{title}}</h3>
-{{body}}
+{{#if isEditing}}
+  {{input value=title}}<br>
+  {{textarea value=body}}
+    <button {{action 'savePost' this}}>Save Post</button>
+
+{{else}}
+  <h3>{{title}}</h3>
+  {{body}}
+
+  <button {{action 'editPost' this}}>Edit Post</button>
+{{/if}}
